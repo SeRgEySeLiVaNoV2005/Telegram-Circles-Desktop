@@ -1,0 +1,36 @@
+# --- Telegram API & Sessions (КРИТИЧЕСКОЕ) ---
+# Никогда не делись файлом сессии, это дает полный доступ к твоему аккаунту!
+*.session
+*.session-journal
+my_session.session
+
+# --- Python & Environment ---
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- Временные файлы проекта ---
+# Видео, которые создаются в процессе работы
+temp.avi
+circle.mp4
+*.mp4
+*.avi
+
+# --- Конфиденциальные данные ---
+# Если ты решишь вынести API_ID и API_HASH в отдельный файл
+.env
+config.ini
+
+# --- IDE & System ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# --- Распространение ---
+dist/
+build/
+*.spec
