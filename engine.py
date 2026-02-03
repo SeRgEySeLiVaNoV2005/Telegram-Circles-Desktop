@@ -1,5 +1,7 @@
 import sys, asyncio, threading, mss, cv2, os, keyboard, time, subprocess
 import numpy as np
+import os
+import ctypes
 from telethon import TelegramClient
 from PyQt6.QtWidgets import QApplication
 from PyQt6.QtCore import QObject, pyqtSignal, Qt
@@ -10,7 +12,14 @@ from dotenv import load_dotenv
 load_dotenv()
 API_ID = os.getenv('API_ID')
 API_HASH = os.getenv('API_HASH')
+try:
+    ctypes.windll.shcore.SetProcessDpiAwareness(1) # 1 = Process_System_DPI_Aware
+except Exception:
+    ctypes.windll.user32.SetProcessDPIAware()
 
+# Принудительное масштабирование для Qt
+os.environ["QT_AUTO_SCREEN_SCALE_FACTOR"] = "1"
+os.environ["QT_ENABLE_HIGHDPI_SCALING"] = "1"
 # Константы проекта
 CIRCLE_SIZE = 400
 FPS = 25
